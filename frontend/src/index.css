@@ -10,7 +10,7 @@
   --purple-light: #fef08a;
   --cyan: #eab308;
   --cyan-light: #fde047;
-  --glass-bg: rgba(10, 10, 10, 0.98);
+  --glass-bg: #080808;
   --glass-border: rgba(255, 255, 255, 0.15);
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
 }
