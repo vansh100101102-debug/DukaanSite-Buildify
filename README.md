@@ -3,23 +3,18 @@
 <img src="https://img.icons8.com/fluency/140/shop.png" width="140"/>
 
 # 🚀 DukaanSite
-
 ### AI-Powered No-Code Website Builder for Modern Businesses
 
-<p>
 Build professional websites in minutes — without coding.
-</p>
 
-<br>
+### 🔗 <a href="https://dukaan-site-buildify-elbc.vercel.app/" target="_blank">Launch Your Website</a>
 
-<a href="https://dukaan-site-buildify-elbc.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/🚀%20Launch%20Your%20Website-0f172a?style=for-the-badge&logo=vercel&logoColor=white"/>
-</a>
-<p>
 ✨ From Local Shop to Global Brand ✨
-</p>
+
 </div>
+
 ---
+
 <div align="center">
 
 <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" width="70"/>
@@ -27,6 +22,7 @@ Build professional websites in minutes — without coding.
 <img src="https://img.icons8.com/fluency/96/combo-chart.png" width="70"/>
 
 </div>
+
 ---
 
 # 🌟 About DukaanSite
@@ -44,7 +40,7 @@ create stunning professional websites instantly.
 
 No coding.  
 No complicated setup.  
-No expensive developers.  
+No expensive developers.
 
 Just describe your business and DukaanSite automatically creates a beautiful modern website for you.
 
@@ -154,7 +150,7 @@ Supports:
 ✅ Mobile-friendly websites  
 ✅ Fast & secure performance  
 ✅ SEO-ready architecture  
-✅ Scalable infrastructure  
+✅ Scalable infrastructure
 
 ---
 
@@ -174,7 +170,6 @@ DukaanSite helps businesses build trust online and grow digitally without techni
 <div align="center">
 
 ## ✨ Our Mission
-
 ### Transform local shops into powerful online brands.
 
 </div>
@@ -191,8 +186,6 @@ DukaanSite helps businesses build trust online and grow digitally without techni
 <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" width="70"/>
 
 </div>
-
-<br>
 
 - HTML5
 - CSS3
@@ -282,13 +275,6 @@ This project is licensed under the MIT License.
 <div align="center">
 
 # ✨ DukaanSite ©️ 2026 ✨
-
 ### From Local Shop to Global Brand
-
-<br><br>
-
-<a href="https://dukaan-site-buildify-elbc.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/Visit%20Live%20Website-38bdf8?style=for-the-badge&logo=vercel&logoColor=white"/>
-</a>
 
 </div>
