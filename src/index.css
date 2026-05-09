@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A0E27;
+  --color-navy-light: #12183D;
+  --color-purple: #7F77DD;
+  --color-purple-light: #A19BEE;
+  --color-cyan: #00D9FF;
+  --color-cyan-light: #66EFFF;
+  
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-navy text-white font-body antialiased selection:bg-purple selection:text-white;
+    background-color: #0A0E27;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  
+  .btn-premium {
+    @apply px-8 py-4 rounded-full bg-gradient-to-r from-purple to-cyan text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(127,119,221,0.5)] active:scale-95 cursor-pointer;
+  }
+}
+
+/* Custom Utilities */
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradient-x 15s linear infinite;
+}
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
