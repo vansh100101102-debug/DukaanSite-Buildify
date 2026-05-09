@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: ''https://dukaansite-buildify.onrender.com'',
+        target: 'https://dukaansite-buildify.onrender.com',
         changeOrigin: true,
       },
     },
