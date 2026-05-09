@@ -21,6 +21,11 @@ export default function AIChatBot() {
     e.preventDefault()
     if (!input.trim() || loading) return
 
+    if (!GROQ_API_KEY) {
+      setMessages(prev => [...prev, { role: 'assistant', content: 'Setup Error: The VITE_GROQ_API_KEY environment variable is missing on Vercel. Please add it to your Vercel project settings and redeploy!' }])
+      return
+    }
+
     const userMsg = { role: 'user', content: input }
     setMessages(prev => [...prev, userMsg])
     setInput('')
@@ -43,12 +48,21 @@ export default function AIChatBot() {
         })
       })
 
+      if (!response.ok) {
+        const errText = await response.text()
+        throw new Error(`API Error ${response.status}: ${errText}`)
+      }
+
       const data = await response.json()
       const aiMsg = { role: 'assistant', content: data.choices[0].message.content }
       setMessages(prev => [...prev, aiMsg])
     } catch (err) {
       console.error('Chat error:', err)
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I encountered a connection issue. Please try again later.' }])
+      const errorMessage = err.message || 'connection issue'
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: `Sorry, I encountered an error: ${errorMessage}. If you are on Vercel, please check your environment variables.` 
+      }])
     } finally {
       setLoading(false)
     }
