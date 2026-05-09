@@ -76,7 +76,7 @@ export default function AIChatBot() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="bg-black/95 backdrop-blur-3xl w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border border-white/10 origin-bottom-right rounded-3xl"
+            className="bg-[#0a0a0a] w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border border-white/10 origin-bottom-right rounded-3xl"
           >
             {/* Header */}
             <div className="p-6 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border-b border-white/10 flex items-center justify-between">
