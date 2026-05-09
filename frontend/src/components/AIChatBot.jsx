@@ -62,7 +62,7 @@ export default function AIChatBot() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="glass w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border-white/10 origin-bottom-right"
+            className="bg-black/95 backdrop-blur-3xl w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border border-white/10 origin-bottom-right rounded-3xl"
           >
             {/* Header */}
             <div className="p-6 bg-gradient-to-r from-purple/20 to-cyan/20 border-b border-white/10 flex items-center justify-between">
@@ -138,9 +138,9 @@ export default function AIChatBot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple to-cyan flex items-center justify-center text-white shadow-2xl shadow-purple/40 relative group"
+        className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 flex items-center justify-center text-white shadow-2xl shadow-cyan-300/50 relative group"
       >
-        <div className="absolute inset-0 rounded-2xl bg-white/20 animate-ping group-hover:block hidden" />
+        <div className="absolute inset-0 rounded-full bg-cyan-200/70 animate-ping group-hover:block hidden" />
         {isOpen ? <X size={28} /> : <Sparkles size={28} className="animate-pulse" />}
       </motion.button>
     </div>
