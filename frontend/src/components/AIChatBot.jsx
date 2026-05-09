@@ -79,9 +79,9 @@ export default function AIChatBot() {
             className="bg-black/95 backdrop-blur-3xl w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border border-white/10 origin-bottom-right rounded-3xl"
           >
             {/* Header */}
-            <div className="p-6 bg-gradient-to-r from-purple/20 to-cyan/20 border-b border-white/10 flex items-center justify-between">
+            <div className="p-6 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-purple/20 flex items-center justify-center text-cyan">
+                <div className="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-400">
                   <Bot size={24} />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export default function AIChatBot() {
                 >
                   <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${
                     msg.role === 'user' 
-                    ? 'bg-purple/20 border border-purple/30 text-white ml-12 rounded-tr-none' 
+                    ? 'bg-yellow-500/20 border border-yellow-500/30 text-white ml-12 rounded-tr-none' 
                     : 'bg-white/5 border border-white/10 text-white/80 mr-12 rounded-tl-none'
                   }`}>
                     {msg.content}
@@ -118,7 +118,7 @@ export default function AIChatBot() {
               {loading && (
                 <div className="flex justify-start">
                   <div className="bg-white/5 border border-white/10 p-4 rounded-2xl rounded-tl-none">
-                    <Loader2 size={16} className="animate-spin text-cyan" />
+                    <Loader2 size={16} className="animate-spin text-yellow-400" />
                   </div>
                 </div>
               )}
@@ -131,14 +131,14 @@ export default function AIChatBot() {
                 <input 
                   type="text"
                   placeholder="Ask me anything about your site..."
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 focus:outline-none focus:border-cyan focus:bg-white/10 transition-all text-sm font-medium"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all text-sm font-medium"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                 />
                 <button 
                   type="submit"
                   disabled={loading || !input.trim()}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-gradient-to-r from-purple to-cyan rounded-lg text-white shadow-lg disabled:opacity-50 disabled:grayscale transition-all"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-lg text-amber-950 shadow-lg disabled:opacity-50 disabled:grayscale transition-all"
                 >
                   <Send size={16} />
                 </button>
@@ -152,9 +152,9 @@ export default function AIChatBot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 flex items-center justify-center text-white shadow-2xl shadow-cyan-300/50 relative group"
+        className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center text-amber-950 shadow-2xl shadow-yellow-400/50 relative group"
       >
-        <div className="absolute inset-0 rounded-full bg-cyan-200/70 animate-ping group-hover:block hidden" />
+        <div className="absolute inset-0 rounded-full bg-yellow-300/70 animate-ping group-hover:block hidden" />
         {isOpen ? <X size={28} /> : <Sparkles size={28} className="animate-pulse" />}
       </motion.button>
     </div>
