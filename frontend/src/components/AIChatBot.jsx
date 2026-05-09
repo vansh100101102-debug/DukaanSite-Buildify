@@ -55,14 +55,14 @@ export default function AIChatBot() {
   }
 
   return (
-    <div className="fixed bottom-8 right-8 z-[2000]">
+    <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[2000] flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="glass w-[380px] h-[600px] mb-6 flex flex-col overflow-hidden shadow-2xl border-white/10"
+            className="glass w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-8rem)] sm:h-[600px] max-h-[600px] mb-4 sm:mb-6 flex flex-col overflow-hidden shadow-2xl border-white/10 origin-bottom-right"
           >
             {/* Header */}
             <div className="p-6 bg-gradient-to-r from-purple/20 to-cyan/20 border-b border-white/10 flex items-center justify-between">
