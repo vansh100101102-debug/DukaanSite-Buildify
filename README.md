@@ -110,16 +110,6 @@ Includes:
 - Safe Customer Experience
 
 </td>
-
-<td width="50%">
-
-## 🌍 Multi-language Support
-Supports:
-- English
-- Hindi
-- Regional Languages
-
-</td>
 </tr>
 </table>
 
