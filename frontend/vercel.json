@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://dukaansite-buildify.onrender.com/api/$1"
+    }
+  ]
+}
