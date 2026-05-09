@@ -14,7 +14,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Sparkles size={16} className="text-cyan" />
-          <span className="text-sm font-medium tracking-wide uppercase">AI-Powered Creation</span>
+          <span className="text-sm font-medium tracking-wide uppercase">Easy Website Builder</span>
         </motion.div>
 
         {/* Hero Title */}
@@ -22,11 +22,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl md:text-8xl font-black mb-6 leading-tight tracking-tight"
+          className="text-5xl md:text-8xl font-black mb-6 leading-tight tracking-tight text-current"
         >
-          Your shop deserves <br />
+          Grow your shop <br />
           <span className="bg-gradient-to-r from-purple via-cyan to-purple bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
-            a masterpiece.
+            online today.
           </span>
         </motion.h1>
 
@@ -35,9 +35,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl text-white/60 max-w-2xl mb-12 leading-relaxed"
+          className="text-lg md:text-2xl opacity-80 max-w-2xl mb-12 leading-relaxed mx-auto"
         >
-          Transform your local business with a high-performance website that works as hard as you do. Powered by AI, designed for humans.
+          Get a beautiful website for your business in minutes. No technical skills needed. Just tell us about your shop and we do the rest.
         </motion.p>
 
         {/* Actions */}

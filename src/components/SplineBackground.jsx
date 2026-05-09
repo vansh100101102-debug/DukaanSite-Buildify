@@ -2,15 +2,21 @@ import React from 'react'
 
 export default function SplineBackground() {
   return (
-    <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden">
-      <div className="absolute inset-0 bg-navy opacity-80" />
-      <spline-viewer 
-        url="https://prod.spline.design/R0Z8QXvegzTqhmmD/scene.splinecode"
-        class="w-full h-full"
+    <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden transition-colors duration-500 bg-navy">
+      {/* Animated Gradients */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple/20 blur-[120px] animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-cyan/20 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+      
+      {/* Mesh Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
+        style={{ 
+          backgroundImage: `radial-gradient(var(--text-color) 0.5px, transparent 0.5px)`,
+          backgroundSize: '30px 30px'
+        }} 
       />
-      {/* Ambient overlays to blend the Spline scene with the UI */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-transparent to-navy/80 pointer-events-none" />
-      <div className="absolute inset-0 backdrop-blur-[2px] pointer-events-none" />
+
+      {/* Overlay Gradients for depth */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-purple/5" />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Globe, Layout, User, LogOut } from 'lucide-react'
+import { Menu, X, Globe, Layout, User, LogOut, Sun, Moon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -22,14 +22,14 @@ export default function Navbar({ isLoggedIn, handleLogout, isAdmin }) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
       <div className={`container max-w-7xl mx-auto px-6`}>
-        <div className={`glass px-8 py-4 flex items-center justify-between transition-all duration-500 ${scrolled ? 'rounded-2xl bg-navy/80 shadow-2xl' : 'rounded-3xl'}`}>
+        <div className={`glass px-8 py-4 flex items-center justify-between transition-all duration-500 ${scrolled ? 'rounded-2xl shadow-2xl' : 'rounded-3xl'}`}>
           {/* Brand */}
           <Link to="/" className="flex items-center gap-3 group" onClick={close}>
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple to-cyan flex items-center justify-center text-white group-hover:rotate-12 transition-transform shadow-lg shadow-purple/20">
               <Layout size={20} strokeWidth={2.5} />
             </div>
-            <span className="text-xl font-black tracking-tight bg-white bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan transition-all">
-              ShopForge
+            <span className="text-xl font-black tracking-tight text-current transition-all">
+              DukaanSite
             </span>
           </Link>
 
@@ -60,7 +60,7 @@ export default function Navbar({ isLoggedIn, handleLogout, isAdmin }) {
                 <Link to="/login" className="px-6 py-2 rounded-xl hover:bg-white/5 transition-colors font-bold text-sm">
                   {t('nav.login')}
                 </Link>
-                <Link to="/order" className="px-6 py-2 rounded-xl bg-white text-navy font-black text-sm hover:bg-cyan hover:text-white transition-all shadow-xl shadow-white/5">
+                <Link to="/order" className="px-6 py-2 rounded-xl bg-purple text-white font-black text-sm hover:bg-cyan transition-all shadow-xl shadow-purple/10">
                   Get Started
                 </Link>
               </div>

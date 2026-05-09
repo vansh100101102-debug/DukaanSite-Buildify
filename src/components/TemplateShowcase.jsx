@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { ExternalLink, ShoppingCart, Layout, X, ArrowRight, Eye } from 'lucide-react'
 
 const templates = [
-  { id: 1, name: 'FreshMart', type: 'Grocery', color: '#10b981', desc: 'Clean, organic feel for local produce.' },
-  { id: 2, name: 'TechZone', type: 'Electronics', color: '#22d3ee', desc: 'High-tech, neon aesthetic for gadgets.' },
-  { id: 3, name: 'OnyxStyle', type: 'Fashion', color: '#f43f5e', desc: 'Premium minimalist luxury design.' },
-  { id: 4, name: 'TastyBites', type: 'Food', color: '#f59e0b', desc: 'Warm layout for restaurants and cafes.' },
-  { id: 5, name: 'Aura Studio', type: 'Portfolio', color: '#8b5cf6', desc: 'Artistic design for creative pros.' },
-  { id: 6, name: 'CyberHub', type: 'Software', color: '#00D9FF', desc: 'Fast-paced digital product interface.' }
+  { id: 1, name: 'Online Stores', type: 'E-Commerce', color: '#10b981', desc: 'Boost sales with a premium shopping experience.', image: '/templates/modern_ecom_template_1778305295597.png' },
+  { id: 2, name: 'Fashion Elite', type: 'Apparel', color: '#f43f5e', desc: 'Modern minimalist design for clothing brands.', image: '/templates/fashion_ecom_1778308327281.png' },
+  { id: 3, name: 'Luxury Dining', type: 'Food & Dining', color: '#f59e0b', desc: 'Savor the digital flavor with elegant menus.', image: '/templates/premium_restaurant_template_1778310646602.png' },
+  { id: 4, name: 'Education Portals', type: 'Education', color: '#22d3ee', desc: 'Empower students with a modern learning portal.', image: '/templates/premium_school_template_1778310724271.png' },
+  { id: 5, name: 'Creative Hub', type: 'Portfolio', color: '#7c3aed', desc: 'Showcase your work with a stunning creative portfolio.', image: '/templates/portfolio_creative_template_1778310687082.png' },
+  { id: 6, name: 'Business Solutions', type: 'Corporate', color: '#00D9FF', desc: 'Modern dashboard for enterprise services.', image: '/templates/modern_business_template_1778310687082.png' }
 ]
 
 export default function TemplateShowcase() {
@@ -42,18 +42,14 @@ export default function TemplateShowcase() {
             >
               <div className="h-64 relative overflow-hidden bg-navy-light flex items-center justify-center">
                 <div 
-                  className="w-4/5 h-4/5 rounded-t-xl border-t border-x border-white/20 relative transition-transform duration-500 group-hover:scale-110"
-                  style={{ background: `linear-gradient(135deg, ${t.color}22, transparent)` }}
+                  className="w-full h-full relative transition-transform duration-500 group-hover:scale-110"
                 >
-                  <div className="absolute top-2 left-2 flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                  </div>
-                  <div className="p-8">
-                    <div className="h-4 w-1/2 rounded bg-white/10 mb-4" />
-                    <div className="h-24 w-full rounded bg-white/5" />
-                  </div>
+                  <img 
+                    src={t.image} 
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-all" />
                 </div>
                 
                 <div className="absolute inset-0 bg-navy/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
@@ -108,22 +104,13 @@ export default function TemplateShowcase() {
               className="glass max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex-1 bg-navy-light relative min-h-[300px] flex items-center justify-center p-12 overflow-hidden">
-                 <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ background: `radial-gradient(circle at center, ${selectedTemplate.color}, transparent)` }} />
-                 <div 
-                  className="w-full h-full rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative"
-                  style={{ background: `linear-gradient(135deg, ${selectedTemplate.color}44, #0A0E27)` }}
-                >
-                   {/* Realistic UI Simulation */}
-                   <div className="p-12 space-y-8">
-                     <div className="h-8 w-48 bg-white/20 rounded-lg mb-12" />
-                     <div className="h-20 w-full bg-white/10 rounded-2xl" />
-                     <div className="grid grid-cols-2 gap-6">
-                        <div className="h-40 bg-white/5 rounded-2xl" />
-                        <div className="h-40 bg-white/5 rounded-2xl" />
-                     </div>
-                   </div>
-                </div>
+              <div className="flex-1 bg-navy-light relative min-h-[300px] flex items-center justify-center overflow-hidden">
+                 <div className="absolute inset-0 opacity-40" style={{ background: `radial-gradient(circle at center, ${selectedTemplate.color}, transparent)` }} />
+                 <img 
+                   src={selectedTemplate.image} 
+                   alt={selectedTemplate.name}
+                   className="w-[90%] h-[90%] object-cover rounded-2xl shadow-2xl border border-white/10 relative z-10"
+                 />
               </div>
 
               <div className="w-full md:w-[400px] p-12 flex flex-col justify-between border-l border-white/10 bg-navy/50">

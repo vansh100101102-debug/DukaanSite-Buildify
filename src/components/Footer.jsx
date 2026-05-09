@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple to-cyan flex items-center justify-center text-white shadow-lg shadow-purple/20">
                 <Layout size={20} strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-black tracking-tight">ShopForge</span>
+              <span className="text-xl font-black tracking-tight">DukaanSite</span>
             </Link>
             <p className="text-white/50 text-lg max-w-sm mb-8 leading-relaxed">
               Empowering local businesses with world-class digital storefronts. Build your future, one pixel at a time.
@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/30 text-sm font-medium">
-            © {new Date().getFullYear()} ShopForge Platform. All rights reserved.
+            © {new Date().getFullYear()} DukaanSite Platform. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
