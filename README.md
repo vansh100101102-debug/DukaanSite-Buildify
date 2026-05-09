@@ -1,5 +1,4 @@
 <h1 align="center">🚀 DukaanSite</h1>
-<p align="center"><b>AI-Powered No-Code Website Builder</b></p>
 
 <hr/>
 
