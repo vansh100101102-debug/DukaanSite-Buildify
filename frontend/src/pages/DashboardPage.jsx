@@ -101,13 +101,13 @@ export default function DashboardPage({ isLoggedIn, userEmail, userId }) {
             </div>
           ) : orders.length > 0 ? (
             orders.map((order, i) => (
-              <motion.div
-                key={order._id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="glass p-8 flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-white/[0.07] transition-all group"
-              >
+              <div key={order._id} className="flex flex-col">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass p-8 flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-white/[0.07] transition-all group"
+                >
                 <div className="flex items-center gap-6">
                   <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan group-hover:scale-110 transition-transform">
                     <Layout size={32} />
@@ -121,7 +121,7 @@ export default function DashboardPage({ isLoggedIn, userEmail, userId }) {
                   </div>
                 </div>
 
-                <div className="flex flex-col md:items-end gap-3">
+                <div className="flex flex-col md:items-end gap-3 shrink-0">
                   <StatusBadge status={order.status} deadline={order.deadline} />
                   {(order.status === 'live' || order.siteUrl) && (
                     <a 
@@ -135,6 +135,36 @@ export default function DashboardPage({ isLoggedIn, userEmail, userId }) {
                   )}
                 </div>
               </motion.div>
+              
+              {/* Payment Section for completed websites */}
+              {(order.status === 'live' || order.siteUrl) && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }} 
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="glass p-6 -mt-4 border-t-0 rounded-t-none bg-gradient-to-r from-purple/10 to-cyan/10 flex flex-col md:flex-row items-center gap-6"
+                >
+                  <div className="flex-1">
+                    <h4 className="text-xl font-black text-cyan mb-2">Website Ready! Payment Pending</h4>
+                    <p className="text-sm text-white/70 leading-relaxed mb-4">
+                      Your world-class website has been successfully built! To fully unlock your admin dashboard, custom domain mapping, and premium features, please complete your one-time payment of <span className="text-cyan font-black text-lg">₹{(order.totalPrice || 2999).toLocaleString()}</span>.
+                    </p>
+                    <p className="text-xs font-bold text-white/40 uppercase tracking-widest">
+                      UPI ID: <span className="text-white select-all">7015569134@ybl</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 shrink-0 bg-black/40 p-4 rounded-2xl border border-white/5">
+                    <div className="bg-white p-2 rounded-xl">
+                      <img 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(`upi://pay?pa=7015569134@ybl&pn=ShopForge&am=${order.totalPrice || 2999}&cu=INR`)}`} 
+                        alt="Pay via UPI" 
+                        className="w-24 h-24" 
+                      />
+                    </div>
+                    <p className="text-[10px] font-black text-cyan tracking-widest uppercase">Scan to Pay via UPI</p>
+                  </div>
+                </motion.div>
+              )}
+            </div>
             ))
           ) : (
             <div className="glass p-24 text-center border-dashed border-white/10">

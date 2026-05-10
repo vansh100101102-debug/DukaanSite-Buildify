@@ -31,7 +31,7 @@ const templateOptions = [
   { id: 'fitness_gym', emoji: '🏋️‍♂️', name: 'Fitness Gym', color: '#f97316' },
 ]
 
-const STEPS = ['Your Shop', 'Category', 'Design', 'Details', 'Extra Features', 'Check Price', 'Pay']
+const STEPS = ['Your Shop', 'Category', 'Design', 'Details', 'Extra Features', 'Check Price']
 
 const FEATURES = [
   { id: 'ai', name: 'AI Chatbot (Auto Reply)', price: 1499, icon: Sparkles },
@@ -132,10 +132,10 @@ export default function OrderForm({ isLoggedIn, userEmail, userId, showToast }) 
         userEmail: userEmail?.trim(),
         templateId: form.template,
         totalPrice: calculateTotal(),
-        status: 'pending_payment'
+        status: 'in-progress'
       }
       await axios.post(`${API}/orders`, orderData)
-      showToast('Order Placed! Complete payment to start the build.', 'success')
+      showToast('Order Placed! Your website build has started.', 'success')
       navigate('/dashboard')
     } catch (err) {
       console.error('Order submission error:', err)
@@ -303,66 +303,7 @@ export default function OrderForm({ isLoggedIn, userEmail, userId, showToast }) 
                 </motion.div>
               )}
 
-              {step === 6 && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <div className="mb-10 text-center">
-                    <h2 className="text-4xl font-black mb-3">Make <span className="text-purple">Payment</span></h2>
-                    <p className="text-white/50 text-lg">Scan the QR code or pay to the UPI ID below.</p>
-                  </div>
-                  <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
-                    {/* Payment Options Sidebar */}
-                    <div className="w-full md:w-1/3 space-y-3">
-                       {['UPI (GPay/PhonePe)', 'Credit / Debit / ATM Card', 'Net Banking', 'EMI (Easy Installments)', 'Cash on Delivery'].map(method => (
-                         <button 
-                           key={method}
-                           onClick={() => setPaymentMethod(method)}
-                           className={`w-full text-left px-5 py-4 rounded-xl border-2 font-bold transition-all flex items-center justify-between ${paymentMethod === method ? 'border-cyan bg-cyan/10 text-cyan' : 'border-white/5 text-white/60 hover:bg-white/5 hover:border-white/20'}`}
-                         >
-                           {method}
-                           {paymentMethod === method && <Check size={18} />}
-                         </button>
-                       ))}
-                    </div>
 
-                    {/* Payment Content */}
-                    <div className="w-full md:w-2/3">
-                      <div className="glass p-8 bg-gradient-to-br from-purple/10 to-cyan/10 border-purple/20 flex flex-col items-center text-center">
-                         <div className="w-full flex justify-between mb-6 pb-6 border-b border-white/10">
-                            <span className="text-white/60 font-bold text-lg">Amount Payable</span>
-                            <span className="text-3xl font-black text-cyan">₹{calculateTotal().toLocaleString()}</span>
-                         </div>
-                         
-                         {paymentMethod !== 'UPI (GPay/PhonePe)' && (
-                           <div className="mb-6 p-4 rounded-xl bg-purple/20 border border-purple/30 text-white/90 text-sm">
-                             ⚠️ <strong>Notice:</strong> Due to temporary gateway maintenance, <strong>{paymentMethod}</strong> is unavailable. Please use our secure UPI gateway below to complete your order.
-                           </div>
-                         )}
-
-                         <p className="text-white/80 font-bold mb-6">Scan the QR code with any UPI app to pay securely.</p>
-                         
-                         <div className="bg-white p-4 rounded-2xl inline-block mb-6 shadow-2xl transition-transform hover:scale-105">
-                            <img 
-                              src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(`upi://pay?pa=7015569134@ybl&pn=ShopForge&am=${calculateTotal()}&cu=INR`)}`} 
-                              alt="UPI QR Code" 
-                              className="w-48 h-48"
-                            />
-                         </div>
-
-                         <div className="space-y-2 w-full">
-                           <p className="text-white/60 text-sm font-bold uppercase tracking-widest">Or Use UPI ID</p>
-                           <p className="text-xl md:text-2xl font-black text-white tracking-wider bg-black/40 px-6 py-4 rounded-xl border border-white/10 select-all">
-                             7015569134@ybl
-                           </p>
-                         </div>
-                         
-                         <p className="text-white/50 text-sm mt-8">
-                           After payment is successful, click <strong>Confirm Build</strong> below.
-                         </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
             </AnimatePresence>
 
             <div className="flex justify-between mt-12 pt-12 border-t border-white/5">
